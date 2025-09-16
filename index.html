@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming Zone</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url("https://wallpapercave.com/wp/wp9119325.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #ff3333;
+      animation: floatText 3s infinite alternate;
+      text-shadow: 2px 2px 10px black;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #00ffcc;
+      text-shadow: 2px 2px 8px black;
+      margin: 10px 0 30px 0;
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(-10px); opacity: 0.8; }
+      50% { transform: translateY(0px); opacity: 1; }
+      100% { transform: translateY(10px); opacity: 0.8; }
+    }
+
+    p {
+      font-size: 22px;
+      margin-top: 10px;
+      text-shadow: 1px 1px 6px black;
+    }
+
+    .btn {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #ff3333;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+
+    img {
+      margin-top: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <h1>NO RISK 💥 NO FUN</h1>
+  <h2>By: حمو عادل 🎮</h2>
+  <p>Welcome to Gaming Zone 😎🔥</p>
+
+  <button class="btn" onclick="changeImage()">🎮 صورة لعبة جديدة</button>
+  <button class="btn" onclick="newName()">✨ اسم جديد</button>
+
+  <img id="randomImage" src="https://picsum.photos/400?random=1" alt="game" />
+
+  <p id="nameBox">اسمك المزخرف: ✪GamerX✪</p>
+
+  <script>
+    // صور عشوائية من موقع picsum (شغال 100%)
+    function changeImage() {
+      document.getElementById("randomImage").src = "https://picsum.photos/400?random=" + Math.floor(Math.random() * 1000);
+    }
+
+    // أسماء مزخرفة متنوعة
+    const names = [
+      "✪ShadowSniper✪",
+      "彡★KillerX★彡",
+      "ツDarkHunterツ",
+      "♛KingOfWar♛",
+      "꧁༺GamerPro༻꧂",
+      "☠︎SkullMaster☠︎",
+      "⚡StormBreaker⚡",
+      "乂DragonSlayer乂",
+      "𒆜NightWolf𒆜",
+      "✿NoMercy✿"
+    ];
+
+    function newName() {
+      const randomName = names[Math.floor(Math.random() * names.length)];
+      document.getElementById("nameBox").innerText = "اسمك المزخرف: " + randomName;
+    }
+  </script>
+</body>
+</html>
